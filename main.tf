@@ -1,8 +1,9 @@
-resource "aws_instance" "demo_ec2" {
-  ami           = "ami-076e3a557efe1aa9c"
-  instance_type = "t2.micro"
+resource "aws_vpc" "main" {
+  cidr_block       = "10.0.0.0/16"
+  instance_tenancy = "default"
 
   tags = {
-    Name = "ExampleAppServerInstance"
+    Name = "VPC-demo"
+    Purpose = "terrafrom using Jenkins"
   }
 }
